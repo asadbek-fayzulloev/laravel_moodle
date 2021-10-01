@@ -13,7 +13,7 @@
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
         "jquery": "^3.6",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.31",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
         "postcss": "^8.1.14",
@@ -25,6 +25,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "chart.js": "2.7.2",
+        "vue-chartjs": "3.2.1",
         "vue2-circle-progress": "^1.2.3"
     }
 }
