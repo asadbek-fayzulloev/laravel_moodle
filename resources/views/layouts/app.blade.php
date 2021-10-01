@@ -23,11 +23,12 @@
 
         @include('includes.navbar')
         @yield('content')
+        <div id="app"></div>
         @include('includes.footer')
     </div>
  <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="{{ asset('js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
