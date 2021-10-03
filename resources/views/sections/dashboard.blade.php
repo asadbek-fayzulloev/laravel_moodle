@@ -159,15 +159,17 @@
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="mb-1 text-uppercase text-muted ls-1">Performance</h6>
-                  <h5 class="mb-0 h3">Total orders</h5>
+                  <h5 class="mb-0 h3">Enrollment methods</h5>
                 </div>
               </div>
             </div>
             <div class="card-body">
               <!-- Chart -->
-              <div class="chart">
-                <canvas id="chart-bars" class="chart-canvas"></canvas>
-              </div>
+              {{-- <div id="app"> --}}
+                  <chartpie-component></chartpie-component>
+                {{-- <pie-chart :data="1212" :user="12" :options="chartOptions"></pie-chart> --}}
+              {{-- </div> --}}
+
             </div>
           </div>
         </div>

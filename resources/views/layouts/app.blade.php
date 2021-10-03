@@ -19,11 +19,10 @@
     </head>
 <body>
     @include('includes.sidebar')
-    <div class="main-content" id="panel">
+    <div class="main-content" id="app">
 
         @include('includes.navbar')
         @yield('content')
-        <div id="app"></div>
         @include('includes.footer')
     </div>
  <!-- Argon Scripts -->

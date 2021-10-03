@@ -24,3 +24,4 @@ Route::get('/dashboard', [App\Http\Controllers\DashboarController::class, 'index
 Route::get('/tables', [App\Http\Controllers\DashboarController::class, 'showTables'])->name('tables');
 Route::get('/chart', [App\Http\Controllers\DashboarController::class, 'showChart'])->name('chart');
 
+Route::get('/data/chart', [App\Http\Controllers\DataController::class, 'pieChartData'])->name('pie.get');

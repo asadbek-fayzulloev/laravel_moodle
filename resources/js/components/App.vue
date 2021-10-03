@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <pie-chart :data="chartData" :options="chartOptions"></pie-chart>
+    <pie-chart :data="chartData" :options="{ hoverBorderWidth: 20 }"></pie-chart>
   </div>
 </template>
 
@@ -11,25 +11,22 @@ export default {
   components: {
     PieChart
   },
-  data() {
+  data: function() {
     return {
-      chartOptions: {
-        hoverBorderWidth: 20
-      },
-      chartData: {
-        hoverBackgroundColor: "red",
-        hoverBorderWidth: 10,
-        labels: ["Green", "Red", "Blue"],
-        datasets: [
-          {
-            label: "Data One",
-            backgroundColor: ["#41B883", "#E46651", "#00D8FF"],
-            data: [1, 10, 5]
-          }
-        ]
-      }
+      data: []
     };
+  },
+  mounted() {
+      this.update()
+  },
+  methods: {
+    update: function () {
+        axios.get('/data/chart').then((response) => {
+            this.data = response.data
+        });
+    }
   }
+
 };
 </script>
 
