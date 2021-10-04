@@ -187,7 +187,9 @@
                 </div>
               </div>
               <div>
-                  <h4>Salom</h4>
+                  <div class="col-md-12">
+                        <h5>Salom</h5>
+                  </div>
               </div>
             </div>
 
@@ -497,6 +499,6 @@
         </div>
       </div>
       <!-- Footer -->
-
+      @include('sections.recentIteams')
     </div>
 @endsection

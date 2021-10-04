@@ -5,7 +5,8 @@
  */
 
 require('./bootstrap');
-
+require('datatables-bootstrap');
+require('jquery');
 window.Vue = require('vue').default;
 // import App from "./components/App";
 
