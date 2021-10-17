@@ -21,7 +21,7 @@
     @include('includes.sidebar')
     <div class="main-content" id="app">
 
-        @include('includes.navbar')
+        {{-- @include('includes.navbar') --}}
         @yield('content')
         @include('includes.footer')
     </div>

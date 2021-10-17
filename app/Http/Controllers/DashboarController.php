@@ -9,14 +9,23 @@ use Illuminate\Support\Facades\DB;
 class DashboarController extends Controller
 {
     public function index(){
-        $courses = Courses::all();
-        $students_array = DB::table('mdl_role_assignments')->where('roleid', '5')->pluck('userid')->toArray();
-        $students = User::whereIn('id', $students_array)->get();
-        $instructors_array = DB::table('mdl_role_assignments')->where('roleid', '4')->pluck('userid')->toArray();
-        $instructors = User::whereIn('id', $instructors_array)->get();
-        // $instructors = Instructors::all();
-        $users = User::all();
-        // dd($students);
+        $courses = cache()->remember('Counters', 24*24, function(){
+            return Courses::all();
+        });
+        $users = cache()->remember('Users', 24*24, function(){
+            return User::all();
+        });
+        $students = cache()->remember('Students', 24*24, function(){
+            $students_array = DB::table('mdl_role_assignments')->where('roleid', '5')->pluck('userid')->toArray();
+            return User::whereIn('id', $students_array)->get();
+
+        });
+        $instructors = cache()->remember('Instructors', 24*24, function(){
+            $instructors_array = DB::table('mdl_role_assignments')->where('roleid', '4')->pluck('userid')->toArray();
+            return User::whereIn('id', $instructors_array)->get();
+        });
+
+
         return view('sections.dashboard', compact('courses', 'students', 'instructors', 'users'));
     }
     public function showTables(){
