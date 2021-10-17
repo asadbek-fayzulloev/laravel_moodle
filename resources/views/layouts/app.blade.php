@@ -16,6 +16,8 @@
       <!-- Page plugins -->
       <!-- Argon CSS -->
       <link rel="stylesheet" href="{{ asset('assets/css/argon.css') }}" type="text/css">
+      <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}" type="text/css">
+
     </head>
 <body>
     @include('includes.sidebar')
