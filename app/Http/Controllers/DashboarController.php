@@ -21,10 +21,10 @@ class DashboarController extends Controller
         $course_enrol = DB::select('SELECT firstname, lastname FROM mdl_user_enrolments as U JOIN mdl_enrol as E ON U.enrolid=E.id JOIN mdl_user as A ON A.id=U.userid WHERE E.courseid=3');
 //        dd($course_enrol);
         $instructors = DB::select('SELECT count(U.id) as count FROM mdl_role_assignments as E JOIN mdl_user as U ON U.id=E.userid WHERE E.roleid=3')[0]->count;
+        $last_instructors = DB::select('SELECT * FROM mdl_user_lastaccess AS A JOIN mdl_user as U ON U.id=A.userid JOIN mdl_role_assignments as R ON R.userid=U.ID WHERE R.roleid=3 ORDER BY timeaccess DESC LIMIT 5');
 
 
-
-        return view('sections.dashboard', compact('courses', 'students', 'instructors', 'users', 'recentCourses'));
+        return view('sections.dashboard', compact('courses', 'students', 'instructors', 'users', 'recentCourses', 'last_instructors'));
     }
     public function showTables(){
         $courses = Courses::all();

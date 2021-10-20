@@ -7,7 +7,6 @@
 require('./bootstrap');
 require('datatables-bootstrap');
 require('jquery');
-
 window.Vue = require('vue').default;
 // import App from "./components/App";
 
@@ -24,6 +23,7 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('chartpie-component', require('./components/ChartpieComponent.vue').default);
+Vue.component('linechart-component', require('./components/LineChartComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="chart" class="pt-1">
     <pie-chart :chart-data="data" :options="{responsive: true, maintainAspectRatio: true}"></pie-chart>
   </div>
 </template>
