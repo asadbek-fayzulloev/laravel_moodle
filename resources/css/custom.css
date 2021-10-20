@@ -1,3 +1,10 @@
 body {
     overflow-x: hidden;
 }
+
+.header-text {
+    text-align: left;
+}
+.recentitems {
+    height: 250px;
+}

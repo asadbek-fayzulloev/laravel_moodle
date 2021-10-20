@@ -25,3 +25,5 @@ Route::get('/tables', [App\Http\Controllers\DashboarController::class, 'showTabl
 Route::get('/chart', [App\Http\Controllers\DashboarController::class, 'showChart'])->name('chart');
 
 Route::get('/data/chart', [App\Http\Controllers\DataController::class, 'pieChartData'])->name('pie.get');
+Route::get('/data/enrolls', [App\Http\Controllers\DataController::class, 'getEnrollments'])->name('data.enrollments.all');
+Route::view('/chart/show', 'includes.chart');
