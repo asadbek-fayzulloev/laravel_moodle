@@ -92,7 +92,7 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="mb-0 card-title text-uppercase text-muted">INSTRUCTORS</h5>
-                            <span class="mb-0 h2 font-weight-bold">{{number_format(count($instructors)) }}</span>
+                            <span class="mb-0 h2 font-weight-bold">{{number_format(($instructors)) }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="text-white shadow icon icon-shape bg-gradient-info rounded-circle">

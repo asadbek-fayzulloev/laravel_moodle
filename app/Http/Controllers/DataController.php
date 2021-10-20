@@ -9,14 +9,17 @@ use Illuminate\Support\Facades\DB;
 class DataController extends Controller
 {
     public function pieChartData(){
+        $self = DB::select('SELECT count(id) as count FROM mdl_enrol WHERE enrol="self"')[0]->count;
+        $manual = DB::select('SELECT count(id) as count FROM mdl_enrol WHERE enrol="manual"')[0]->count;
+        $email = DB::select('SELECT count(id) as count FROM mdl_enrol WHERE enrol="email"')[0]->count;
         return [
             "hoverBackgroundColor" => "red",
             "hoverBorderWidth" => 10,
-            "labels" => ["Direct", "Referal", "Organic"],
+            "labels" => ["Manual", "Self", "Email"],
             "datasets" => array([
                 "label" => "Data One",
                 "backgroundColor" => ["#41B883", "#E46651", "#00D8FF"],
-                "data" => [5, 5, 10]
+                "data" => [$manual, $self, $email]
             ])
         ];
 
